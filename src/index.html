@@ -5,9 +5,112 @@
     @@include("partials/head.html")
     <title>Homepage | Dash Ui - Bootstrap 5 Admin Dashboard Template</title>
 </head>
+<style>
+    .translate {
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif !important;
+  font-size: 13px;
+  color: #939598;
+  max-width: 60%;
+}
 
+* {
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif !important;
+  font-size: 13px;
+  color: #939598;
+}
+
+.google-wrapper {
+  display: inline-block;
+  width: 150px;
+  background-color: #fff;
+  color: #939598;
+  overflow: hidden;
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #ccc;
+}
+
+.google-wrapper select {
+  border: none;
+  background: transparent;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 13px;
+  width: 100%;
+  color: #939598;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  cursor: text;
+  padding: 5px 10px;
+}
+
+.google-wrapper a,
+.google-wrapper a:hover {
+  display: inline-block;
+  background-color: none;
+  border: none;
+  color: #939598;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  width: 20px;
+  transition: all .3s ease;
+  margin: 0;
+}
+
+.google-wrapper a:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 4.5px solid transparent;
+  border-left-color: #939598;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  margin-top: -5px;
+}
+
+#translator-wrapper select:focus,
+#translator-wrapper a:focus,
+#translator-wrapper select:active,
+#translator-wrapper a:active {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.google-dropdown {
+  background: #FFFFFF;
+  color: #939598;
+  min-width: 190px;
+  padding: 15px;
+  line-height: 20px;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 10px;
+}
+
+#translator-wrapper a:hover,
+#translator-wrapper a:active {
+  opacity: 0.9;
+}
+</style>
 <body class="bg-light">
     <div id="db-wrapper">
+        <div id="wrapper" class="translate">
+            <div id="translator-wrapper" class="google-wrapper">
+                <select id="translate-language">
+                    <option value="en" selected="selected" class="google-dropdown">English</option>
+                    <option value="en">English</option>
+                    <option value="ru">Russian</option>
+                </select><a id="translate-me" href="#" title="Translate"></a>
+            </div>
+            </div>
         <!-- navbar vertical -->
         @@include('partials/navbar-vertical.html', { "page": "dashboard", })
         <!-- Page content -->
